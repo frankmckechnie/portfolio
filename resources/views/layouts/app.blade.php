@@ -15,61 +15,108 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
+    <div class="overlay">
+    <div class="abs-center overlay-card">
+        <div class="close">X</div>
+        <div class="floated overlay-image">
+        <div class="abs-center post-image"></div>
+        </div>
+        <div class="floated overlay-desc">
+        <div class="rela-block desc-title"></div>
+        <div class="rela-block desc-author"></div>
+        <div class="rela-block desc-desc"></div>
+        </div>
+    </div>
+    </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+    <div class="nav-bar">
+    <div class="horz-center nav-container">
+        <div class="floated logo">WebFrankly</div>
+        <ul class="floated nav-div nav-links">
+        <li class="rela-inline">De-Blog</li>
+        <li class="rela-inline">Github</li>
+        <li class="rela-inline">Codepen</li>
+        </ul>
+        <ul class="floated nav-div">
+        <li class="rela-inline menu-toggle">•••</li>
+        </ul>
+        <div class="floated right nav-div search-container">
+        <div class="rela-inline icon search-icon"></div><input type="text" placeholder="Search" class="rela-inline nav-search" /></div>
+        <ul class="floated right nav-div sign-div">
+        <li class="rela-inline">Sign-Up</li>
+        <li class="rela-inline">Sign-In</li>
+        </ul>
+        <div class="menu-card">
+        <div class="abs-center menu-background"></div>
+        <div class="menu-content">
+            <ul class="menu-links sub-nav-links">
+            <li class="rela-block">Shots</li>
+            <li class="rela-block">Designers</li>
+            <li class="rela-block">Teams</li>
+            <li class="rela-block">Community</li>
+            <li class="rela-block">Jobs</li>
+            </ul>
+            <ul class="menu-links">
+            <li class="rela-block">About</li>
+            <li class="rela-block">Shop</li>
+            <li class="rela-block">Support</li>
+            <li class="rela-block">Tags</li>
+            <li class="rela-block">Contact</li>
+            </ul>
+            <ul class="menu-links sign-links">
+            <li class="rela-block">Sign-Up</li>
+            <li class="rela-block">Sign-In</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </div>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+    <div class="rela-block container">
+    <div class="rela-block profile-card">
+        <div class="profile-pic" id="profile_pic"></div>
+        <div class="rela-block profile-name-container">
+        <div class="rela-block user-name" id="user_name">Frank Mckechnie</div>
+        <div class="rela-block user-desc" id="user_description">Hi my name is frank and I am a developer. What kind of developer? Still figuring that one out, should check my stuff to see what I have done and maybe you can tell me! I like code and design, recently I also like servers!</div>
+        </div>
+        <div class="rela-block profile-card-stats">
+        <div class="floated profile-stat works" id="num_works">28<br></div>
+        <div class="floated profile-stat followers" id="num_followers">112<br></div>
+        <div class="floated profile-stat following" id="num_following">245<br></div>
+        </div>
+    </div>
+    <div class="rela-block content">
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+        <div class="rela-inline image"></div>
+    </div>
+    <div class="rela-inline button more-images" onclick="add_images(); inf_scroll = true;">More Images</div>
+    </div>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
         @yield('content')
     </div>
